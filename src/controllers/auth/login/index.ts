@@ -11,7 +11,7 @@ import {
 const router = Router();
 
 router.post(
-  "/login",
+  "/",
   async (request: Request, response: Response, next: NextFunction) => {
     const { email, password } = request.body;
 

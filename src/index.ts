@@ -9,9 +9,10 @@ import { connectToDatabase } from "./mongoClient";
 const app = express();
 
 app.use((req: Request, res: Response, next: NextFunction): void => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   if (req.method === "OPTIONS") {
     res.status(200).end();
