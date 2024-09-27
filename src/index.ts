@@ -26,7 +26,7 @@ app.get("/", (_, res: Response) => {
 
 app.use(json());
 
-app.use(routes);
+app.use("/api/v1", routes);
 
 const startServer = async () => {
   await connectToDatabase();
