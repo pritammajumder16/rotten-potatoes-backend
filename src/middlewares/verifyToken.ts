@@ -3,7 +3,7 @@ import { HttpException } from "../classes/HttpException";
 import { verifyAccessToken } from "../utils/jwt";
 
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
-  const accessToken = req.cookies.accessToken; // Assuming the access token is stored in cookies
+  const accessToken = req.cookies.accessToken;
 
   if (!accessToken) {
     return next(new HttpException(401, "Access token is missing"));

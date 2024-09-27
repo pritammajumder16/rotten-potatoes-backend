@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+
 import { credentials } from "./constants";
-
-dotenv.config();
-
+console.log(credentials);
 let isConnected: boolean = false;
 
 export const connectToDatabase = async (): Promise<void> => {

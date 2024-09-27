@@ -1,9 +1,8 @@
-import express, { NextFunction, json, Request, Response } from "express";
-import routes from "./routes";
 import dotenv from "dotenv";
 
 dotenv.config();
-
+import express, { NextFunction, json, Request, Response } from "express";
+import routes from "./routes";
 import { credentials } from "./constants";
 import { connectToDatabase } from "./mongoClient";
 
