@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 import { credentials } from "./constants";
-console.log(credentials);
 let isConnected: boolean = false;
 
 export const connectToDatabase = async (): Promise<void> => {
