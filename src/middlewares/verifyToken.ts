@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { HttpException } from "../classes/HttpException";
-import { verifyjwt } from "../utils/verifyjwt";
+import { verifyAccessToken } from "../utils/jwt";
 
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   const accessToken = req.cookies.accessToken; // Assuming the access token is stored in cookies
@@ -10,7 +10,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    const userData = verifyjwt(accessToken);
+    const userData = verifyAccessToken(accessToken);
     req.user = userData;
     next();
   } catch (error) {
