@@ -4,4 +4,5 @@ export interface IUser extends Document {
   username: string;
   email: string;
   password: string;
+  verifyPassword(password: string): Promise<boolean>;
 }

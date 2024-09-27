@@ -21,6 +21,7 @@ UserSchema.pre<IUser>("save", async function (next) {
     next();
   }
 });
+
 UserSchema.methods.verifyPassword = async function (
   password: string
 ): Promise<boolean> {
