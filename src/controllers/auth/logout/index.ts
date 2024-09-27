@@ -1,11 +1,16 @@
 import Router, { NextFunction, Request, Response } from "express";
+import { successResponse } from "../../../utils/response";
 
 const router = Router();
 
-router.get("/", (request: Request, response: Response, next: NextFunction) => {
+router.post("/", (request: Request, response: Response, next: NextFunction) => {
   try {
-  } catch (err) {
-    next(err);
+    response.clearCookie("accessToken");
+    response.clearCookie("refreshToken");
+
+    successResponse({ message: "Logout successful", data: {}, res: response });
+  } catch (error) {
+    next(error);
   }
 });
 

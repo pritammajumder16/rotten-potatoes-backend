@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import { credentials } from "./constants";
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ export const connectToDatabase = async (): Promise<void> => {
   }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI!);
+    await mongoose.connect(credentials.MONGODB_URI!);
     isConnected = true;
     console.log("Connected to MongoDB successfully");
   } catch (error) {
